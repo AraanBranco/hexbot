@@ -1,0 +1,22 @@
+{
+  "name": "hexbot",
+  "version": "0.0.1",
+  "description": "Bot for TheMorphz",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "bot",
+    "discord",
+    "nodejs"
+  ],
+  "author": "Araan Branco <araanbranco@protonmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "dotenv": "^6.2.0",
+    "firebase": "^5.8.5"
+  }
+}
