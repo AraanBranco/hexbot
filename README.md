@@ -27,3 +27,16 @@ FIREBASE_MESSAGE_ID
 ```
 
 And finally run `npm start` for run you project
+
+## Commands available
+`!ping` - Check latency from your bot
+
+`!add` - Add new Command, ex: `!add !social "Github: https://github.com/araanbranco"`
+
+`!rm` - Remove custom command, ex: `!rm !social`
+
+`!commands` - List all commands
+
+## Enjoy!
+
+Join my [discord](https://discord.gg/gvv2XTv) and come to participate!

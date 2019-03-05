@@ -8,10 +8,6 @@ class Commander {
         method: 'ping'
       },
       {
-        cmd: '!test',
-        method: 'test'
-      },
-      {
         cmd: '!add',
         method: 'addCommand'
       },
@@ -20,7 +16,7 @@ class Commander {
         method: 'rmCommand'
       },
       {
-        cmd: '!comandos',
+        cmd: '!commands',
         method: 'allCommands'
       }
     ]
@@ -101,7 +97,7 @@ class Commander {
         const validate = this.validate(message.content)
         console.log(`Command sended: "${validate.cmd}", has function: ${validate.has}`)
         if(!validate.has) {
-          return message.reply('Comando não existe!')
+          return message.reply('Command not found!')
         }
 
         return el[validate.method](message, validate)
@@ -113,12 +109,8 @@ class Commander {
     return message.reply(`Pong! Latency: ${this.client.ping}ms`)
   }
 
-  test(message) {
-    return message.reply(`This is a Test`)
-  }
-
   allCommands(message) {
-    let response = "Comandos disponiveis: "
+    let response = "Commands available: "
     this.loadCmds()
       .then(() => {
         let cmds = [...new Set(this.cmds.map(c => c.cmd))]
@@ -149,7 +141,7 @@ class Commander {
     this.cmds = this.cmds.filter((v, i) => {
       return v.cmd !== `!${secondCommand}`
     })
-    message.reply(`Comando !${secondCommand} removido!`)
+    message.reply(`Commands !${secondCommand} removed!`)
   }
 
   addCommand(message) {
@@ -169,7 +161,7 @@ class Commander {
         text: text
       })
 
-    message.reply(`Comando !${secondCommand} adicionado!`)
+    message.reply(`Command !${secondCommand} added!`)
   }
 }
 
